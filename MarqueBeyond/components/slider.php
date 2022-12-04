@@ -1,5 +1,7 @@
     <!-- Slideshow container -->
-    <?php $imagesQ = mysqli_query($conn, "SELECT album_img FROM `slider` WHERE `album_nam` = 'album1'");
+    <?php 
+    include 'config.php';
+    $imagesQ = mysqli_query($conn, "SELECT album_img FROM `slider` WHERE `album_nam` = 'album1'");
     $images = mysqli_fetch_assoc($imagesQ);
     $image = $images['album_img'];
     $image = explode(',', $image);
