@@ -106,9 +106,7 @@ if (isset($_POST['verification_link'])) {
         </div>";
         } else {
             echo "<script>
-        alert('Server Down3! Please try later');
-        
-        
+        alert('Server Down! Please try later'); 
     </script>";
         }
     }
