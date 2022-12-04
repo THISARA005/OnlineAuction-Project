@@ -100,9 +100,8 @@ if (isset($_POST['verification_link'])) {
         $query = mysqli_query($conn, "UPDATE `users` SET `resettoken`='$resetToken',`resettokenexpire`='$date' WHERE `email` = '$seemail'");
         if ($query ) {
             echo "<div class='link-popup'>
-            <h2>Verify Your Email</h2>
-            <p>Verification link has been send to your email</p>
-            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin'>Go Back</a></button>
+            <h2>You have succesfully sign-up</p>
+            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login'>Sign-in</a></button>
         </div>";
         } else {
             echo "<script>
