@@ -12,7 +12,7 @@ $error = '';
 if (isset($_POST['userlogin'])) {
     $useremail = mysqli_real_escape_string($conn, $_POST['email']);
     $userpass = mysqli_real_escape_string($conn, sha1($_POST['password']));
-    $selectUser = "SELECT `user_id`, `email`, `pasword`, `status` , `user_type` FROM `users` WHERE `email` = '{$useremail}' AND `pasword` = '{$userpass}'" or die("Query failed");
+    $selectUser = "SELECT `user_id`, `email`, `pasword`, `status` , `user_type` FROM `users` WHERE `email` = '$useremail' AND `pasword` = '$userpass'";
     $user = mysqli_query($conn, $selectUser);
     if (mysqli_num_rows($user) > 0) {
         $urow = mysqli_fetch_assoc($user);
