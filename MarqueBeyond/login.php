@@ -10,11 +10,12 @@ if(isset($_SESSION['user']) || isset($_SESSION['ad_userid'])){
 }
 $error = '';
 if (isset($_POST['userlogin'])) {
-    $useremail = mysqli_real_escape_string($conn, $_POST['email']);
-    $userpass = mysqli_real_escape_string($conn, sha1($_POST['password']));
+    $useremail = $_POST['email'];
+    $userpass = sha1($_POST['password']);
     $selectUser = "SELECT `user_id`, `email`, `pasword`, `status` , `user_type` FROM `users` WHERE `email` = '$useremail' AND `pasword` = '$userpass'";
     $user = mysqli_query($conn, $selectUser);
     if (mysqli_num_rows($user) > 0) {
+        echo "done";
         $urow = mysqli_fetch_assoc($user);
         if($urow['status'] === '1') {
             if ($_POST['password']) {
