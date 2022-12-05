@@ -91,20 +91,21 @@ if (isset($_POST['verification_link'])) {
         move_uploaded_file($sepimg_tmpname, $USER_IN_IMAGE_PATH . $sepimg_name) or die('img not uploaded');
         move_uploaded_file($secompimg_tmpname, $COMP_IN_IMAGE_PATH . $secompimg_name) or die('img not uploaded');
     }
-    
+    $query=mysqli_query($conn, "INSERT INTO `company` (`comp_nam`, `comp_reg`, `comp_img`) VALUES ('$secompname' , '$secompreg' , '$secompimg_name')");
 
-
-    mysqli_query($conn, "INSERT INTO `company` (`comp_nam`, `comp_reg`, `comp_img`) VALUES ('$secompname' , '$secompreg' , '$secompimg_name')");
-
-    $query = mysqli_query($conn, "SELECT comp_id FROM company WHERE comp_nam = '$secompname'");
-    $rows = mysqli_fetch_assoc($query);
-    if($rows){
-        echo "slxjnd";
+    if($query){
+        echo "done";
     }
-    
-    $compid = $rows['comp_id'];
-    
-    
+
+    $compid = mysqli_query($conn, "SELECT comp_id FROM company WHERE comp_nam = '$secompname'");
+    if($compid){
+        echo "done2";
+    }
+    $compid = mysqli_fetch_array($compid);
+    if($compid){
+        echo "done3";
+    }
+    $compid = $compid['comp_id'];
     
     $insertSeUser = "INSERT INTO `users`(`first_name`, `last_name`, `email`, `pasword`, `user_type`, `comp_id`, `address_id`, `contact`,`reg_date`, `user_img`, `agrement`) VALUES ('$sefname' , '$selname' , '$seemail' , '$sepass' , '$user' , $compid, NULL , '$secontact', '$date' , '$sepimg_name', $seagremnt)" or die('seller registration Query Failed');
     $seUser = mysqli_query($conn, $insertSeUser);
@@ -113,16 +114,15 @@ if (isset($_POST['verification_link'])) {
         date_default_timezone_set('Asia/Colombo');
         $date = date('Y-m-d');
         $query = mysqli_query($conn, "UPDATE `users` SET `resettoken`='$resetToken',`resettokenexpire`='$date' WHERE `email` = '$seemail'");
-        if ($query ) {
+        if ($query) {
             echo "<div class='link-popup'>
-            <h2>Verify Your Email</h2>
-            <p>Verification link has been send to your email</p>
-            <button><a href='{$hostname}'>Go Back</a></button>
+            <h2>You have succesfully sign-up</p>
+            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login.php'>Sign-in</a></button>
         </div>";
         } else {
             echo "<script>
         alert('Server Down! Please try later');
-        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin';
+        window.location.href='{$hostname}';
     </script>";
         }
     }
