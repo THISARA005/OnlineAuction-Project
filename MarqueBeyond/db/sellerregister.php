@@ -113,7 +113,7 @@ if (isset($_POST['verification_link'])) {
         date_default_timezone_set('Asia/Colombo');
         $date = date('Y-m-d');
         $query = mysqli_query($conn, "UPDATE `users` SET `resettoken`='$resetToken',`resettokenexpire`='$date' WHERE `email` = '$seemail'");
-        if ($query && Mail($seemail, $resetToken)) {
+        if ($query ) {
             echo "<div class='link-popup'>
             <h2>Verify Your Email</h2>
             <p>Verification link has been send to your email</p>
