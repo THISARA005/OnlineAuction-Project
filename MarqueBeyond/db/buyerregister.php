@@ -101,7 +101,7 @@ if (isset($_POST['verification_link'])) {
         if ($query ) {
             echo "<div class='link-popup'>
             <h2>You have succesfully sign-up</p>
-            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login'>Sign-in</a></button>
+            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login.php'>Sign-in</a></button>
         </div>";
         } else {
             echo "<script>
@@ -111,7 +111,7 @@ if (isset($_POST['verification_link'])) {
     }
 } else {
     echo "<script>
-        window.location.href='$hostname';
+        window.location.href='{$hostname}/admin.php';
     </script>";
 }
 ?>
