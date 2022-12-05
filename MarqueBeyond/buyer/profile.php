@@ -59,7 +59,7 @@
     </form>
     <?php
     if (isset($_POST['edit'])) {
-        header("Location: edit_profile.php");
+        header("Location: http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/edit_profile.php");
     }
     ?>
 </div>

@@ -112,7 +112,7 @@ session_start();
                                 <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php'>Dashboard</a></li>
                                 <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/profile.php'>Profile</a></li>
                                 <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/change-password.php'>Change Password</a></li>
-                                <li><a href='lhttp://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/ogout.php'>Logout</a></li>
+                                <li><a href='lhttp://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/logout.php'>Logout</a></li>
                             </ul>
                         </div>";
                     } else {

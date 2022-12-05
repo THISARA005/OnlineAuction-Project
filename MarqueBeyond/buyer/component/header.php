@@ -41,7 +41,7 @@ if (!isset($_SESSION['bu_userid'])) {
             <span onclick="menuProfile()"><?php echo $userimg['first_name'] . ' ' . $userimg['last_name']  ?></span>
             <div class="profile">
                 <ul class="pro-drop" id="profile">
-                    <li><a href= "http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/" >Home</a></li>
+                    <li><a href= "http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/overview.php" >Home</a></li>
                     <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/profile.php">Profile</a></li>
                     <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/change-password.php">Change Password</a></li>
                     <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/logout.php">Logout</a></li>
