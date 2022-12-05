@@ -66,7 +66,7 @@
             }
         } else {
             echo "<script>
-                <h1>Server Down2! Please try later</h1>;
+                <h1>Server Down! Please try later</h1>;
                 setInterval(()=>{
                     window.location.href='{$hostname}';
                     },9000);

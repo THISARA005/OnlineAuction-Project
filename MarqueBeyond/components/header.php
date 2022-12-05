@@ -98,7 +98,7 @@ session_start();
                             $IMG = $USER_IMAGE_PATH . $ID['user_img'];
                             $firstname = $ID['first_name'];
                             $lastname = $ID['last_name'];
-                            $hostnam = $hostname . 'seller/overview.php';
+                            $hostnam = 'http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php';
                         } else {
                             $IMG = $ADMIN_IMAGE_PATH . $AID['ad_img'];
                             $firstname = $AID['ad_firstname'];
@@ -109,7 +109,7 @@ session_start();
                         <div class='profile' id='profile'>
                             <ul class='pro-drop'>
                                 <span>{$firstname} {$lastname}</span>
-                                <li><a href='{$hostnam}'>Dashboard</a></li>
+                                <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php'>Dashboard</a></li>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <li><a href='change-password.php'>Change Password</a></li>
                                 <li><a href='logout.php'>Logout</a></li>
@@ -120,7 +120,7 @@ session_start();
                         <span>{$firstname} {$lastname}</span>
                         <div class='profile' id='profile'>
                             <ul class='pro-drop'>
-                                <li><a href='$hostnam'>Dashboard</a></li>
+                                <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php'>Dashboard</a></li>
                                 <li><a href='profile.php'>Profile</a></li>
                                 <li><a href='change-password.php'>Change Password</a></li>
                                 <li><a href='logout.php'>Logout</a></li>
