@@ -5,7 +5,7 @@ $password = '';
 $db = 'eauction';
 $conn = mysqli_connect($host , $user , $password , $db ) or die('Db Connection failed' . mysqli_connect_error());
 
-$hostname = 'http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin/';
+$hostname = 'http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/';
 
 $TEMP_IMAGE_PATH = 'assets/img/avatar.png';
 $USER_IN_IMAGE_PATH = '../uploaded/seprofileimg/';
