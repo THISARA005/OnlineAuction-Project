@@ -4,7 +4,7 @@ require 'db/config.php';
 if(isset($_SESSION['user']) || isset($_SESSION['ad_userid'])){
     echo "
     <script>
-        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin';
+        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin/';
     </script>
     ";
 }
