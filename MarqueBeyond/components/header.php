@@ -103,7 +103,7 @@ session_start();
                             $IMG = $ADMIN_IMAGE_PATH . $AID['ad_img'];
                             $firstname = $AID['ad_firstname'];
                             $lastname = $AID['ad_lastname'];
-                            $hostnam = $hostname . 'admin/overview.php';
+                            $hostnam = 'http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin/overview.php'; 
                         }
                         echo "<div class='avatar'><img id='profImg' onclick=profil() src='{$IMG}'></div>
                         <div class='profile' id='profile'>
