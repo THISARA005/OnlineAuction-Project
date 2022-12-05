@@ -111,7 +111,7 @@ if (isset($_POST['verification_link'])) {
     }
 } else {
     echo "<script>
-        window.location.href='{$hostname}';
+        window.location.href='$hostname';
     </script>";
 }
 ?>
