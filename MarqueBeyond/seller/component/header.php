@@ -43,9 +43,9 @@ if (!isset($_SESSION['se_userid'])) {
             <div class="profile">
                 <ul class="pro-drop" id="profile">
                     <li><a href="<?php echo $hostname ?>">Home</a></li>
-                    <li><a href="profile.php">Profile</a></li>
-                    <li><a href="change-password.php">Change Password</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/profile.php">Profile</a></li>
+                    <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/change-password.php">Change Password</a></li>
+                    <li><a href="http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>
