@@ -4,7 +4,7 @@ require 'db/config.php';
 if(isset($_SESSION['user']) || isset($_SESSION['ad_userid'])){
     echo "
     <script>
-        window.location.href='$hostname';
+        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/admin';
     </script>
     ";
 }
@@ -18,7 +18,7 @@ if (isset($_POST['userlogin'])) {
     if (mysqli_num_rows($user) > 0) { 
         $urow = mysqli_fetch_assoc($user);
         if($urow['status'] === '1') {
-            echo "1";
+            
             if ($_POST['password']) {
                 echo "2";
                 $_SESSION['status'] = true;
@@ -33,8 +33,8 @@ if (isset($_POST['userlogin'])) {
                         window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php';
                     </script>
                     ";
-                } elseif ($user_type == 'buyer') {
-                    echo "3";
+                } elseif ($urow['status'] === '0') {
+                    
                     $_SESSION['bu_userid'] = $urow['user_id'];
                     $_SESSION['user'] = $urow['user_id'];
                     echo "
@@ -43,7 +43,7 @@ if (isset($_POST['userlogin'])) {
                     </script>
                     ";
                 } else {
-                    echo "4";
+                   
                     echo "
                     <script>
                         window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/index.php';
@@ -51,7 +51,7 @@ if (isset($_POST['userlogin'])) {
                     ";
                 }
             }
-        }echo "5";
+        }
     } else {
         $error = "<small style='color : red'>Please enter correct Login Details</small>";
     }
