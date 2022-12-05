@@ -8,10 +8,9 @@
     $selectdata = mysqli_query($conn, "SELECT * FROM `users` 
     LEFT JOIN `address` ON users.address_id = `address`.address_id WHERE users.user_id = $userid");
     $Data = mysqli_fetch_assoc($selectdata);
-
     ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
         <div class="sre-2">
             <div class="img">
                 <img src="<?php echo $USER_IN_IMAGE_PATH . $Data['user_img'] ?>" alt="">
@@ -51,7 +50,8 @@
         </div>
         <div class="comp-nmbr sre-1">
             <label>Contact Number</label>
-            <input type="tel" name="bucontact" <?php echo " {$disable} value='{$Data['contact']}'" ?>>
+            <input type="tel" name="bucontact" <?php echo " {$disable} value='{$Data['contact']}'" ?>
+            >
         </div>
         <div class="submit">
             <button type="submit" name="edit">Edit</button>

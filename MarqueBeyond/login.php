@@ -4,7 +4,7 @@ require 'db/config.php';
 if(isset($_SESSION['user']) || isset($_SESSION['ad_userid'])){
     echo "
     <script>
-        window.location.href='{$hostname}';
+        window.location.href='$hostname';
     </script>
     ";
 }
@@ -14,11 +14,13 @@ if (isset($_POST['userlogin'])) {
     $userpass = sha1($_POST['password']);
     $selectUser = "SELECT `user_id`, `email`, `pasword`, `status` , `user_type` FROM `users` WHERE `email` = '$useremail' AND `pasword` = '$userpass'";
     $user = mysqli_query($conn, $selectUser);
-    if (mysqli_num_rows($user) > 0) {
-        echo "done";
+    
+    if (mysqli_num_rows($user) > 0) { 
         $urow = mysqli_fetch_assoc($user);
         if($urow['status'] === '1') {
+            echo "1";
             if ($_POST['password']) {
+                echo "2";
                 $_SESSION['status'] = true;
                 $_SESSION['user_email'] = $urow['email'];
                 $_SESSION['user_pas'] = $urow['pasword'];
@@ -28,26 +30,28 @@ if (isset($_POST['userlogin'])) {
                     $_SESSION['user'] = $urow['user_id'];
                     echo "
                     <script>
-                        window.location.href='{$hostname}seller/overview.php';
+                        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php';
                     </script>
                     ";
                 } elseif ($user_type == 'buyer') {
+                    echo "3";
                     $_SESSION['bu_userid'] = $urow['user_id'];
                     $_SESSION['user'] = $urow['user_id'];
                     echo "
                     <script>
-                        window.location.href='{$hostname}buyer/overview.php';
+                        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/buyer/overview.php';
                     </script>
                     ";
                 } else {
+                    echo "4";
                     echo "
                     <script>
-                        window.location.href='{$hostname}index.php';
+                        window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/index.php';
                     </script>
                     ";
                 }
             }
-        }
+        }echo "5";
     } else {
         $error = "<small style='color : red'>Please enter correct Login Details</small>";
     }
