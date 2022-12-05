@@ -110,9 +110,9 @@ session_start();
                             <ul class='pro-drop'>
                                 <span>{$firstname} {$lastname}</span>
                                 <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php'>Dashboard</a></li>
-                                <li><a href='profile.php'>Profile</a></li>
-                                <li><a href='change-password.php'>Change Password</a></li>
-                                <li><a href='logout.php'>Logout</a></li>
+                                <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/profile.php'>Profile</a></li>
+                                <li><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/change-password.php'>Change Password</a></li>
+                                <li><a href='lhttp://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/ogout.php'>Logout</a></li>
                             </ul>
                         </div>";
                     } else {

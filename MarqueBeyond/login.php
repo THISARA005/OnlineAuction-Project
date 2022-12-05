@@ -17,10 +17,10 @@ if (isset($_POST['userlogin'])) {
     
     if (mysqli_num_rows($user) > 0) { 
         $urow = mysqli_fetch_assoc($user);
-        if($urow['status'] === '1') {
+        if($urow['status'] === '0') {
             
             if ($_POST['password']) {
-                echo "2";
+                
                 $_SESSION['status'] = true;
                 $_SESSION['user_email'] = $urow['email'];
                 $_SESSION['user_pas'] = $urow['pasword'];
@@ -33,7 +33,7 @@ if (isset($_POST['userlogin'])) {
                         window.location.href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/seller/overview.php';
                     </script>
                     ";
-                } elseif ($urow['status'] === '0') {
+                } elseif ($user_type == 'buyer') {
                     
                     $_SESSION['bu_userid'] = $urow['user_id'];
                     $_SESSION['user'] = $urow['user_id'];
