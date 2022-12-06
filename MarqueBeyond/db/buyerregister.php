@@ -102,6 +102,7 @@ if (isset($_POST['verification_link'])) {
             echo "<div class='link-popup'>
             <h2>You have succesfully sign-up</p>
             <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login.php'>Sign-in</a></button>
+            <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/'>Back</a></button>
         </div>";
         } else {
             echo "<script>
