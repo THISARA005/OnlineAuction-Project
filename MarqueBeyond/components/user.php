@@ -44,7 +44,7 @@
             mysqli_close($conn);
             if (mysqli_num_rows($user) > 0) {
                 $urow = mysqli_fetch_assoc($user);
-                if ($urow['status'] === '1') {
+                if ($urow['status'] === '0') {
                     if ($_POST['password']) {
                         $_SESSION['status'] = true;
                         // $_SESSION['user_email'] = $urow['email'];

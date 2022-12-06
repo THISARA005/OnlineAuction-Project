@@ -93,18 +93,11 @@ if (isset($_POST['verification_link'])) {
     }
     $query=mysqli_query($conn, "INSERT INTO `company` (`comp_nam`, `comp_reg`, `comp_img`) VALUES ('$secompname' , '$secompreg' , '$secompimg_name')");
 
-    if($query){
-        echo "done";
-    }
-
+    
     $compid = mysqli_query($conn, "SELECT comp_id FROM company WHERE comp_nam = '$secompname'");
-    if($compid){
-        echo "done2";
-    }
+    
     $compid = mysqli_fetch_array($compid);
-    if($compid){
-        echo "done3";
-    }
+    
     $compid = $compid['comp_id'];
     
     $insertSeUser = "INSERT INTO `users`(`first_name`, `last_name`, `email`, `pasword`, `user_type`, `comp_id`, `address_id`, `contact`,`reg_date`, `user_img`, `agrement`) VALUES ('$sefname' , '$selname' , '$seemail' , '$sepass' , '$user' , $compid, NULL , '$secontact', '$date' , '$sepimg_name', $seagremnt)" or die('seller registration Query Failed');
@@ -119,6 +112,7 @@ if (isset($_POST['verification_link'])) {
             <h2>You have succesfully sign-up</p>
             <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/login.php'>Sign-in</a></button>
             <button><a href='http://localhost/MyFolder/MarqueBeyond/MarqueBeyond/'>Back</a></button>
+            
         </div>";
         } else {
             echo "<script>
